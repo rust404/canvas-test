@@ -23,6 +23,13 @@
 
       var isPainting = false;
       var lastPosition;
+      document.body.addEventListener(
+        "touchmove",
+        function (e) {
+          e.preventDefault(); //阻止默认的处理方式(阻止下拉滑动的效果)
+        },
+        { passive: false }
+      );
       if (isTouchDevice) {
         document.addEventListener("touchstart", function (e) {
           var x = e.touches[0].clientX;
